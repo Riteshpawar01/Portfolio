@@ -133,14 +133,6 @@ This portfolio is designed to:
 
 ---
 
-## 📫 Contact
-
-**Ritesh Pawar**
-
-- LinkedIn: *(Add your LinkedIn URL)*
-- GitHub: *(Add your GitHub URL)*
-- Email: *(Add your Email)*
-
 ---
 
 ## ⭐ Future Improvements
