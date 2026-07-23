@@ -16,7 +16,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 
-const navItems = ["Projects", "Services", "About", "Contact"];
+const navItems = ["Projects", "Services", "Resume", "About", "Contact"];
 
 const capabilities = [
   "Full-stack web apps",
@@ -148,7 +148,7 @@ function Kicker({ children }: { children: React.ReactNode }) {
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="max-w-6xl text-5xl font-black uppercase leading-[0.86] tracking-tight text-white sm:text-7xl lg:text-8xl">
+    <h2 className="max-w-6xl text-4xl font-black uppercase leading-[0.9] tracking-tight text-white sm:text-7xl sm:leading-[0.86] lg:text-8xl">
       {children}
     </h2>
   );
@@ -156,33 +156,33 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 
 function DeckVisual() {
   return (
-    <div className="relative min-h-[520px] overflow-hidden border border-white/12 bg-[#111] p-5">
-      <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-hobroPink blur-[90px]" />
-      <div className="absolute -bottom-20 left-8 h-64 w-64 rounded-full bg-[#f7b500]/60 blur-[100px]" />
+    <div className="relative min-h-[360px] overflow-hidden border border-white/12 bg-[#111] p-4 sm:min-h-[520px] sm:p-5">
+      <div className="absolute -right-24 -top-24 h-56 w-56 rounded-full bg-hobroPink blur-[80px] sm:h-72 sm:w-72" />
+      <div className="absolute -bottom-20 left-8 h-48 w-48 rounded-full bg-[#f7b500]/60 blur-[90px] sm:h-64 sm:w-64" />
       <div className="relative grid h-full gap-4">
         <motion.div
           animate={{ y: [0, -14, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="ml-auto w-[78%] border border-white/15 bg-black/80 p-5"
+          className="ml-auto w-[86%] border border-white/15 bg-black/80 p-4 sm:w-[78%] sm:p-5"
         >
           <p className="font-mono text-xs uppercase text-white/45">Capability card 01</p>
-          <h3 className="mt-8 text-5xl font-black uppercase leading-none text-white">Design systems</h3>
+          <h3 className="mt-8 text-3xl font-black uppercase leading-none text-white sm:text-5xl">Design systems</h3>
         </motion.div>
         <motion.div
           animate={{ y: [0, 16, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="w-[82%] border border-white/15 bg-hobroPink p-5 text-black"
+          className="w-[88%] border border-white/15 bg-hobroPink p-4 text-black sm:w-[82%] sm:p-5"
         >
           <p className="font-mono text-xs uppercase">Capability card 02</p>
-          <h3 className="mt-8 text-5xl font-black uppercase leading-none">Full-stack apps</h3>
+          <h3 className="mt-8 text-3xl font-black uppercase leading-none sm:text-5xl">Full-stack apps</h3>
         </motion.div>
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-          className="ml-10 border border-white/15 bg-white p-5 text-black"
+          className="ml-4 border border-white/15 bg-white p-4 text-black sm:ml-10 sm:p-5"
         >
           <p className="font-mono text-xs uppercase text-black/45">Capability card 03</p>
-          <h3 className="mt-8 text-5xl font-black uppercase leading-none">Recruiter-ready</h3>
+          <h3 className="mt-8 text-3xl font-black uppercase leading-none sm:text-5xl">Recruiter-ready</h3>
         </motion.div>
       </div>
     </div>
@@ -300,11 +300,11 @@ export default function PortfolioExperience() {
         )}
       </nav>
 
-      <section id="home" className="px-5 pb-16 pt-32 sm:px-8 lg:pb-24 lg:pt-40">
+      <section id="home" className="px-4 pb-12 pt-28 sm:px-8 sm:pb-16 lg:pb-24 lg:pt-40">
         <div className="mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[1.06fr_0.94fr] lg:items-end">
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <Kicker>Design-first full-cycle developer</Kicker>
-            <h1 className="mt-7 max-w-6xl text-[17vw] font-black uppercase leading-[0.78] tracking-[-0.075em] text-white sm:text-[118px] lg:text-[154px]">
+            <h1 className="mt-7 max-w-6xl text-[18vw] font-black uppercase leading-[0.86] tracking-[-0.045em] text-white sm:text-[118px] sm:leading-[0.78] sm:tracking-[-0.075em] lg:text-[154px]">
               I build digital products with strategy, code and taste.
             </h1>
           </motion.div>
@@ -314,7 +314,7 @@ export default function PortfolioExperience() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="grid gap-8"
           >
-            <p className="max-w-xl text-xl leading-8 text-white/62">
+            <p className="max-w-xl text-lg leading-8 text-white/62 sm:text-xl">
               I am Ritesh Shantaram Pawar, a Computer Engineering student building polished web apps, Java backend services,
               Spring Boot APIs, dashboards, case studies, and recruiter-ready product experiences.
             </p>
@@ -337,14 +337,14 @@ export default function PortfolioExperience() {
       </section>
 
       <section className="border-y border-white/10 px-5 py-8 sm:px-8">
-        <div className="mx-auto flex max-w-[1500px] flex-wrap gap-x-10 gap-y-4 font-mono text-xs uppercase tracking-[0.24em] text-white/52">
+        <div className="mx-auto flex max-w-[1500px] flex-wrap gap-x-6 gap-y-3 font-mono text-[11px] uppercase tracking-[0.18em] text-white/52 sm:gap-x-10 sm:gap-y-4 sm:text-xs sm:tracking-[0.24em]">
           {capabilities.map((item) => (
             <span key={item}>{item}</span>
           ))}
         </div>
       </section>
 
-      <section id="projects" className="px-5 py-24 sm:px-8">
+      <section id="projects" className="px-4 py-16 sm:px-8 sm:py-24">
         <div className="mx-auto max-w-[1500px]">
           <div className="grid gap-8 lg:grid-cols-[1fr_420px] lg:items-end">
             <SectionTitle>Selected projects with product-level framing.</SectionTitle>
@@ -352,7 +352,7 @@ export default function PortfolioExperience() {
               I present work like a digital agency would: what it is, what it solves, what I handled, and why it matters.
             </p>
           </div>
-          <div className="mt-16 grid gap-px bg-white/10">
+          <div className="mt-10 grid gap-px bg-white/10 sm:mt-16">
             {projects.map((project, index) => (
               <motion.a
                 key={project.name}
@@ -363,11 +363,11 @@ export default function PortfolioExperience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.25 }}
                 transition={{ delay: index * 0.04 }}
-                className="group grid gap-6 bg-hobroBlack p-5 transition hover:bg-white hover:text-black md:grid-cols-[1fr_160px_300px] md:p-8"
+                className="group grid gap-5 bg-hobroBlack p-4 transition hover:bg-white hover:text-black sm:p-5 md:grid-cols-[1fr_160px_300px] md:p-8"
               >
                 <div>
                   <p className="font-mono text-xs uppercase tracking-[0.24em] text-hobroPink">{project.type}</p>
-                  <h3 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">{project.name}</h3>
+                  <h3 className="mt-4 text-3xl font-black uppercase leading-none sm:text-6xl">{project.name}</h3>
                   <p className="mt-5 max-w-3xl leading-7 text-white/58 group-hover:text-black/62">{project.summary}</p>
                 </div>
                 <p className="font-mono text-xs uppercase tracking-[0.24em] text-white/42 group-hover:text-black/42">{project.year}</p>
@@ -384,16 +384,16 @@ export default function PortfolioExperience() {
         </div>
       </section>
 
-      <section id="services" className="bg-white px-5 py-24 text-black sm:px-8">
+      <section id="services" className="bg-white px-4 py-16 text-black sm:px-8 sm:py-24">
         <div className="mx-auto max-w-[1500px]">
           <Kicker>Services</Kicker>
-          <h2 className="mt-6 max-w-6xl text-5xl font-black uppercase leading-[0.86] tracking-tight sm:text-7xl lg:text-8xl">
+          <h2 className="mt-6 max-w-6xl text-4xl font-black uppercase leading-[0.9] tracking-tight sm:text-7xl sm:leading-[0.86] lg:text-8xl">
             Full-cycle help for founders, students and small teams.
           </h2>
-          <div className="mt-16 grid gap-px bg-black/10 lg:grid-cols-4">
+          <div className="mt-10 grid gap-px bg-black/10 sm:mt-16 md:grid-cols-2 lg:grid-cols-5">
             {services.map((service) => (
               <article key={service.title} className="bg-white p-6">
-                <h3 className="text-3xl font-black uppercase leading-none">{service.title}</h3>
+                <h3 className="text-2xl font-black uppercase leading-none sm:text-3xl">{service.title}</h3>
                 <p className="mt-6 leading-7 text-black/58">{service.text}</p>
               </article>
             ))}
@@ -401,16 +401,40 @@ export default function PortfolioExperience() {
         </div>
       </section>
 
-      <section id="agency" className="px-5 py-24 sm:px-8">
+      <section id="resume" className="px-4 py-16 sm:px-8 sm:py-24">
+        <div className="mx-auto grid max-w-[1500px] gap-8 border-y border-white/12 py-10 lg:grid-cols-[1fr_420px] lg:items-center">
+          <div>
+            <Kicker>Resume</Kicker>
+            <h2 className="mt-5 max-w-5xl text-4xl font-black uppercase leading-[0.9] tracking-tight text-white sm:text-7xl sm:leading-[0.86]">
+              Download the resume before you leave.
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/62">
+              Includes education, Java backend skills, MERN projects, certifications, and contact details in one clean PDF.
+            </p>
+          </div>
+          <a href="/resume.pdf" className="block" target="_blank" rel="noreferrer">
+            <div className="border border-white/14 bg-white p-5 text-black transition hover:bg-hobroPink">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-black/50">PDF / Resume</p>
+              <h3 className="mt-10 text-4xl font-black uppercase leading-none">Ritesh Pawar</h3>
+              <div className="mt-8 flex items-center justify-between">
+                <span className="text-sm font-medium">Open resume</span>
+                <Download size={20} />
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="about" className="px-4 py-16 sm:px-8 sm:py-24">
         <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <Kicker>About Ritesh</Kicker>
-            <h2 className="mt-6 text-5xl font-black uppercase leading-[0.86] tracking-tight sm:text-7xl">
+            <h2 className="mt-6 text-4xl font-black uppercase leading-[0.9] tracking-tight sm:text-7xl sm:leading-[0.86]">
               Small team energy. One builder ownership.
             </h2>
           </div>
           <div className="grid gap-8">
-            <p className="text-2xl leading-9 text-white/72">
+            <p className="text-xl leading-8 text-white/72 sm:text-2xl sm:leading-9">
               I like projects where design and engineering meet. My goal is to become the developer who can understand the
               product, shape the UI, wire the backend, and explain the work clearly.
             </p>
@@ -438,7 +462,7 @@ export default function PortfolioExperience() {
         </div>
       </section>
 
-      <section className="px-5 py-24 sm:px-8">
+      <section className="px-4 py-16 sm:px-8 sm:py-24">
         <div className="mx-auto max-w-[1500px]">
           <div className="grid gap-8 lg:grid-cols-[1fr_520px]">
             <SectionTitle>Proof that the learning is active, not theoretical.</SectionTitle>
@@ -454,11 +478,11 @@ export default function PortfolioExperience() {
         </div>
       </section>
 
-      <section id="contact" className="bg-hobroPink px-5 py-24 text-black sm:px-8">
+      <section id="contact" className="bg-hobroPink px-4 py-16 text-black sm:px-8 sm:py-24">
         <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[1fr_520px]">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.28em] text-black/52">Download resume</p>
-            <h2 className="mt-6 max-w-5xl text-5xl font-black uppercase leading-[0.86] tracking-tight sm:text-7xl lg:text-8xl">
+            <h2 className="mt-6 max-w-5xl text-4xl font-black uppercase leading-[0.9] tracking-tight sm:text-7xl sm:leading-[0.86] lg:text-8xl">
               Need a developer who can make the work look alive?
             </h2>
             <div className="mt-10 grid gap-3 font-medium">
@@ -476,7 +500,7 @@ export default function PortfolioExperience() {
           <form
             action="https://formsubmit.co/pawarritesh2612@gmail.com"
             method="POST"
-            className="bg-black p-6 text-white"
+            className="bg-black p-4 text-white sm:p-6"
           >
             <input type="hidden" name="_subject" value="New portfolio contact request" />
             <input type="hidden" name="_template" value="table" />
@@ -503,7 +527,7 @@ export default function PortfolioExperience() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 px-5 py-8 sm:px-8">
+      <footer className="border-t border-white/10 px-4 py-8 sm:px-8">
         <div className="mx-auto flex max-w-[1500px] flex-col justify-between gap-4 font-mono text-xs uppercase tracking-[0.2em] text-white/42 sm:flex-row">
           <p>© 2026 Ritesh Shantaram Pawar</p>
           <p>Design-first full-stack developer</p>

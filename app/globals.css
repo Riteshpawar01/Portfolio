@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 * {
@@ -115,6 +115,25 @@ textarea {
   .cursor-ring,
   .cursor-glow {
     display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body {
+    cursor: auto;
+  }
+
+  input,
+  textarea,
+  button,
+  a {
+    min-height: 44px;
   }
 }
 
