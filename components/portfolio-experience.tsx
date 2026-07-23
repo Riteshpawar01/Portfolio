@@ -13,7 +13,7 @@ import {
   Send,
   X,
 } from "lucide-react";
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const navItems = ["Projects", "Services", "About", "Contact"];
@@ -141,14 +141,6 @@ const certs = [
   "AWS Cloud Practitioner - Currently Pursuing",
   "Responsive Web Design - Practice Track",
 ];
-
-function sendMessage(event: FormEvent<HTMLFormElement>) {
-  event.preventDefault();
-  const form = new FormData(event.currentTarget);
-  const subject = encodeURIComponent(`Portfolio inquiry for Ritesh from ${form.get("name")}`);
-  const body = encodeURIComponent(`${form.get("message")}\n\nReply to: ${form.get("email")}`);
-  window.location.href = `mailto:pawarritesh2612@gmail.com?subject=${subject}&body=${body}`;
-}
 
 function Kicker({ children }: { children: React.ReactNode }) {
   return <p className="font-mono text-xs uppercase tracking-[0.28em] text-hobroPink">{children}</p>;
@@ -481,7 +473,15 @@ export default function PortfolioExperience() {
               </a>
             </div>
           </div>
-          <form onSubmit={sendMessage} className="bg-black p-6 text-white">
+          <form
+            action="https://formsubmit.co/pawarritesh2612@gmail.com"
+            method="POST"
+            className="bg-black p-6 text-white"
+          >
+            <input type="hidden" name="_subject" value="New portfolio contact request" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
             <div className="grid gap-4">
               <label className="grid gap-2 font-mono text-xs uppercase tracking-[0.2em] text-white/48">
                 Your name
